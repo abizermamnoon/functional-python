@@ -20,7 +20,12 @@ def evens(n):
     >>> evens(-1)
     []
     '''
-
+    LC = [x for x in range(0,n + 1) if x%2 == 0]
+    return LC
+print("even(10)=",evens(10))
+print("even(11)=",evens(11))
+print("even(0)=",evens(0))
+print("even(1)=",evens(1))
 
 def threes(n):
     '''
@@ -37,7 +42,19 @@ def threes(n):
     >>> threes(50)
     [3, 13, 23, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 43]
     '''
-
+    LC = []
+    for x in range(0, n + 1):
+        x = str(x)
+        for int in x:
+            if int == '3':
+                LC += [x] 
+    LCI = [eval(x) for x in LC]
+    return LCI
+        
+print("threes(2)=",threes(2))
+print("threes(10)=",threes(10))
+print("threes(20)=",threes(20))
+print("threes(50)=",threes(50))
 
 def small_words(text):
     '''
@@ -55,7 +72,15 @@ def small_words(text):
     >>> small_words('a big word is bad')
     ['a', 'big', 'word', 'is', 'bad']
     '''
+    text_split = text.split()
+    LC = [x for x in text_split if len(x)<5]
+    return LC
 
+    
+
+print("small_words('this is a simple test case')=", small_words('this is a simple test case'))
+print("small_words('really enormous words')=", small_words('really enormous words'))
+print(" small_words('')=",small_words(''))
 
 def squares(n):
     '''
@@ -71,7 +96,13 @@ def squares(n):
     >>> squares(10)
     [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
     '''
+    LC = [x*x for x in range(1,n + 1)]
+    return LC
 
+print("squares(1)=", squares(1))
+print("squares(2)=", squares(2))
+print("squares(3)=", squares(3))
+print("squares(10)=", squares(10))
 
 def lengths(strings):
     '''
@@ -84,3 +115,9 @@ def lengths(strings):
     >>> lengths(['this','is','a','test'])
     [4, 2, 1, 4]
     '''
+    LC = [len(x) for x in strings]
+    return LC
+
+print("lengths([])=", lengths([]))
+print("lengths(['test'])=", lengths(['test']))
+print("lengths(['this','is','a','test'])=", lengths(['this','is','a','test']))
