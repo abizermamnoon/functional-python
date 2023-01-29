@@ -5,6 +5,7 @@ Your solutions should use the map and filter functions,
 and not for loops or list comprehensions.
 '''
 
+
 def evens(n):
     '''
     Returns a list of even numbers from 0 to n inclusive.
@@ -20,16 +21,15 @@ def evens(n):
     >>> evens(-1)
     []
     '''
-    foo = lambda x: x%2 == 0
-    xs = range(n + 1)
-    xs = filter(foo,xs)
+    xs = filter(lambda x: x % 2 == 0, range(n + 1))
     xs = list(xs)
     print(xs)
 
 
 def threes(n):
     '''
-    Returns a list of all numbers from 0 to n inclusive that contain the digit 3.
+    Returns a list of all numbers from 0 to n inclusive that
+    contain the digit 3.
 
     >>> threes(2)
     []
@@ -42,17 +42,19 @@ def threes(n):
     >>> threes(50)
     [3, 13, 23, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 43]
     '''
-    xs = filter(lambda x: '3' in str(x), range(0,n + 1))
+    xs = filter(lambda x: '3' in str(x), range(0, n + 1))
     xs = list(xs)
     print(xs)
 
 
 def small_words(text):
     '''
-    Returns a list of all words in the input text that are less than 5 characters long.
+    Returns a list of all words in the input text that are
+    less than 5 characters long.
 
     HINT:
-    Recall that text.split() converts the text variable into a list of words.
+    Recall that text.split() converts the text variable
+    into a list of words.
 
     >>> small_words('this is a simple test case')
     ['this', 'is', 'a', 'test', 'case']
@@ -90,7 +92,8 @@ def squares(n):
 
 def lengths(strings):
     '''
-    Given a list of strings, returns a list of the lengths of the corresponding strings.
+    Given a list of strings, returns a list of
+    the lengths of the corresponding strings.
 
     >>> lengths([])
     []
@@ -99,6 +102,6 @@ def lengths(strings):
     >>> lengths(['this','is','a','test'])
     [4, 2, 1, 4]
     '''
-    xs = map(lambda x: len(x),strings)
+    xs = map(lambda x: len(x), strings)
     xs = list(xs)
     print(xs)
